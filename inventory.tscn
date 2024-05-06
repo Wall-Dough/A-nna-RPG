@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfmv441wt8qcy"]
+
+[ext_resource type="Script" path="res://InventoryItemList.gd" id="1_gfvu0"]
+
+[node name="Inventory" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -150.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="InventoryItemList" type="ItemList" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+select_mode = 1
+script = ExtResource("1_gfvu0")
+
+[connection signal="multi_selected" from="PanelContainer/MarginContainer/InventoryItemList" to="PanelContainer/MarginContainer/InventoryItemList" method="_on_multi_selected"]
+[connection signal="visibility_changed" from="PanelContainer/MarginContainer/InventoryItemList" to="PanelContainer/MarginContainer/InventoryItemList" method="_on_visibility_changed"]

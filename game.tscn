@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://0rb5s5m8yoct"]
+[gd_scene load_steps=8 format=3 uid="uid://0rb5s5m8yoct"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_3lev0"]
 [ext_resource type="Texture2D" uid="uid://b5ai6ombt0a4m" path="res://sprites/RPGpack_sheet.png" id="1_6n486"]
 [ext_resource type="PackedScene" uid="uid://cnbha87gdmaet" path="res://anna.tscn" id="2_li73p"]
 [ext_resource type="PackedScene" uid="uid://c5d8ksxqofl2b" path="res://game_hud.tscn" id="4_r544u"]
+[ext_resource type="PackedScene" uid="uid://bfmv441wt8qcy" path="res://inventory.tscn" id="5_feqgo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_am66t"]
 texture = ExtResource("1_6n486")
@@ -3072,3 +3073,5 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 1, 131072, 65536
 position = Vector2(960, 540)
 
 [node name="Game HUD" parent="." instance=ExtResource("4_r544u")]
+
+[node name="Inventory" parent="." instance=ExtResource("5_feqgo")]
