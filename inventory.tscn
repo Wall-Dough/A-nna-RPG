@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfmv441wt8qcy"]
+[gd_scene load_steps=3 format=3 uid="uid://bfmv441wt8qcy"]
 
 [ext_resource type="Script" path="res://InventoryItemList.gd" id="1_gfvu0"]
+[ext_resource type="Script" path="res://inventory.gd" id="1_kw8c1"]
 
 [node name="Inventory" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_kw8c1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 8
@@ -27,5 +30,6 @@ layout_mode = 2
 select_mode = 1
 script = ExtResource("1_gfvu0")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="multi_selected" from="PanelContainer/MarginContainer/InventoryItemList" to="PanelContainer/MarginContainer/InventoryItemList" method="_on_multi_selected"]
 [connection signal="visibility_changed" from="PanelContainer/MarginContainer/InventoryItemList" to="PanelContainer/MarginContainer/InventoryItemList" method="_on_visibility_changed"]

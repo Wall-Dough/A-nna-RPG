@@ -10,6 +10,7 @@ action = &"ui_cancel"
 events = [SubResource("InputEventAction_sheb3")]
 
 [node name="Game HUD" type="CanvasLayer"]
+process_mode = 3
 
 [node name="pause menu" type="MenuButton" parent="."]
 anchors_preset = 1

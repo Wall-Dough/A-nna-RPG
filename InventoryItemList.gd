@@ -22,25 +22,15 @@ func add_item_to_inventory(item_info: Dictionary):
 
 func _on_multi_selected(index, selected):
     var new_metadata = get_item_metadata(index)
-    new_metadata["equipped"] = selected
-    if !selected:
-        return
+    new_metadata["equipped"] = !new_metadata["equipped"]
     set_item_metadata(index, new_metadata)
+    if !new_metadata["equipped"]:
+        return
     var selected_items = get_selected_items()
     for selected_idx in selected_items:
         if selected_idx != index:
             var old_metadata = get_item_metadata(selected_idx)
             if old_metadata["type"] == new_metadata["type"]:
-                deselect(selected_idx)
                 old_metadata["equipped"] = false
                 set_item_metadata(selected_idx, old_metadata)
-
-
-func _on_visibility_changed():
-    if !hidden:
-        get_tree().paused = true
-        grab_focus()
-        var down_event = InputEventAction.new()
-        down_event.action = "ui_down"
-        down_event.pressed = true
-        Input.parse_input_event(down_event)
+                deselect(selected_idx)
