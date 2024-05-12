@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnbha87gdmaet"]
+[gd_scene load_steps=6 format=3 uid="uid://cnbha87gdmaet"]
 
 [ext_resource type="Script" path="res://Anna.gd" id="1_p1vvh"]
 [ext_resource type="Texture2D" uid="uid://ewweteql4oes" path="res://sprites/annameeple.png" id="2_0jb7j"]
 [ext_resource type="Texture2D" uid="uid://cp0bldo1v5irj" path="res://sprites/swordBronze.png" id="3_tu1xt"]
+[ext_resource type="Script" path="res://sword.gd" id="4_6t63l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qsqw"]
 size = Vector2(24, 59)
@@ -19,9 +20,10 @@ shape = SubResource("RectangleShape2D_3qsqw")
 
 [node name="camera" type="Camera2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="sword" type="Sprite2D" parent="."]
 position = Vector2(11, 6)
 rotation = 0.879646
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_tu1xt")
 offset = Vector2(0, -28)
+script = ExtResource("4_6t63l")
