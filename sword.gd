@@ -1,4 +1,4 @@
-extends Sprite2D
+extends RigidBody2D
 
 var start_rotation = 0
 var target_rotation = 0

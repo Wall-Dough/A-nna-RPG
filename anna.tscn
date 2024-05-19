@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnbha87gdmaet"]
+[gd_scene load_steps=7 format=3 uid="uid://cnbha87gdmaet"]
 
 [ext_resource type="Script" path="res://Anna.gd" id="1_p1vvh"]
 [ext_resource type="Texture2D" uid="uid://ewweteql4oes" path="res://sprites/annameeple.png" id="2_0jb7j"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qsqw"]
 size = Vector2(24, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyfvd"]
+size = Vector2(14, 34)
 
 [node name="Anna" type="CharacterBody2D"]
 script = ExtResource("1_p1vvh")
@@ -20,10 +23,19 @@ shape = SubResource("RectangleShape2D_3qsqw")
 
 [node name="camera" type="Camera2D" parent="."]
 
-[node name="sword" type="Sprite2D" parent="."]
-position = Vector2(11, 6)
-rotation = 0.879646
+[node name="sword" type="RigidBody2D" parent="."]
+position = Vector2(11, 8)
+rotation = 0.801106
+gravity_scale = 0.0
+script = ExtResource("4_6t63l")
+
+[node name="sprite" type="Sprite2D" parent="sword"]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_tu1xt")
 offset = Vector2(0, -28)
-script = ExtResource("4_6t63l")
+
+[node name="collision" type="CollisionShape2D" parent="sword"]
+position = Vector2(-1.90735e-06, -27)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_fyfvd")
+disabled = true
